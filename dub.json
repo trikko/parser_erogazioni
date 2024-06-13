@@ -1,0 +1,12 @@
+{
+	"authors": [
+		"Andrea Fontana"
+	],
+	"copyright": "Copyright © 2024, Andrea Fontana",
+	"dependencies": {
+		"parserino": "~>0.2.5"
+	},
+	"description": "Parser erogazioni",
+	"license": "proprietary",
+	"name": "parser_erogazioni"
+}
