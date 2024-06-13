@@ -19,6 +19,8 @@ void main()
 {
 	string currentRecipient;
 
+	// Leggo il file HTML creato a partire dal pdf originale
+	// pdftohtml -noframes -i -s  ART_5_DL_149_2013_L_3_2019_dal_01012024.pdf data.html
 	auto doc = Document("data.html".readText);
 	auto rows = doc.bySelector("#page2-div ~ div p");
 
