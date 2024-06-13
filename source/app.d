@@ -22,7 +22,7 @@ void main()
 	// Leggo il file HTML creato a partire dal pdf originale
 	// pdftohtml -noframes -i -s  ART_5_DL_149_2013_L_3_2019_dal_01012024.pdf data.html
 	auto doc = Document("data.html".readText);
-	auto rows = doc.bySelector("#page2-div ~ div p");
+	auto rows = doc.bySelector("#page1-div ~ div p");
 
 	stdout.writeln("Beneficiario\tData erogazione\tAnno erogazione\tData trasmissione\tSoggetto erogante\tN°eroganti\tImporto\tNon in denaro\tAnnotazioni");
 
@@ -77,6 +77,8 @@ void main()
 					.front;
 
 				row[colMap[left]] = p.innerText;
+
+				if (colMap[left] == 6) row[colMap[left]] = row[colMap[left]].split(" ")[1]; // Tolgo il "€ " dall'importo
 				rows.popFront;
 
 				if (rows.empty) break;
