@@ -21,7 +21,7 @@ void main()
 
 	// Leggo il file HTML creato a partire dal pdf originale
 	// pdftohtml -noframes -i -s  ART_5_DL_149_2013_L_3_2019_dal_01012024.pdf data.html
-	auto doc = Document("data.html".readText);
+	auto doc = Document("data.html".readText.replace("<br/>", " <br>"));
 	auto rows = doc.bySelector("#page1-div ~ div p");
 
 	stdout.writeln("Beneficiario\tData erogazione\tAnno erogazione\tData trasmissione\tSoggetto erogante\tN°eroganti\tImporto\tNon in denaro\tAnnotazioni");
